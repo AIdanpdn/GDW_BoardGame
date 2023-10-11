@@ -13,18 +13,6 @@ public class PawnMove : MonoBehaviour
 
     [SerializeField] private cardPlay _cardPlay;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        TurnStart();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void TurnStart()
     {
         currentX = transform.position.x;
