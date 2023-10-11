@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Card : MonoBehaviour
 {
+    //Aidan plans to delete this script
+
     /*
     public int MoveX;
     public int MoveY;

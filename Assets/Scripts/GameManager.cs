@@ -6,12 +6,14 @@ public class GameManager : MonoBehaviour
 {
     private int _card1;
 
+    //These systems are in PawnMove!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    
     //[SerializeField] private cardPlay _cardPlay;
 
     // Start is called before the first frame update
     void Start()
     {
-        drawCards();
+        //drawCards();
         //PawnMove.TurnStart();
     }
 
