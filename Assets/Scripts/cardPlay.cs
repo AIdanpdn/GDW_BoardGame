@@ -12,40 +12,19 @@ public class cardPlay : MonoBehaviour
     private PawnMove pawnMove;
     public int _cardId = 0;
     [SerializeField] private cardFunc cardFunc;
-    [SerializeField] private Text _text;
-    [SerializeField] private Image _cardSprite;
+
+
     private void Start()
     {
-        //Sprite plus1Forward = Resources.Load<Sprite>("+1Forward"); //Loads the sprite
+     
     }
 
-    private void Update() //will be where the card sprite gets updated (empty and unfinished)
-    {
-        if (_cardId == 0)
-        {
-            //_cardSprite.sprite = null;
-        }
-        else if (_cardId == 1)
-        {
-            //_cardSprite.sprite = plus1Forward;
-        }
-        else if (_cardId == 2)
-        {
 
-        }
-
-        else if (_cardId == 3)
-        {
-
-
-        }
-    }
 
     public void cardDraw() //Gets random number that corresponds to each card (Is seperate for each card slot already)
     {
-        _cardId = Random.Range(1, 3); //Change to 22
+        _cardId = Random.Range(1, 5); //Change to 22
         Debug.Log("Card Id " + _cardId);
-        _text.text = ("Card ID " + _cardId);
         //cardSprite.cardImageUpdate();
 
 
@@ -81,8 +60,12 @@ public class cardPlay : MonoBehaviour
 
         }
 
+        else if (_cardId == 4)
+        {
+            cardFunc.wallTemp();
+        }
+
         _cardId = 0;
         Debug.Log("2nd ID " + _cardId);
-        _text.text = ("Card ID " + _cardId);
     }
 }

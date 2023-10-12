@@ -9,7 +9,7 @@ public class cardFunc : MonoBehaviour
 
     [SerializeField] private PawnMove pawnMove;
 
-    //Card functions so far only moves the pawn towards red side (reds cards will simply multiply these values by -1
+    //Card functions so far only moves the pawn towards red side (reds cards will simply multiply these values by -1)
     //We can rename these but rename them in cardPlay also!!!!!!!!!!!!
     public void card0()
     {
@@ -28,6 +28,11 @@ public class cardFunc : MonoBehaviour
     }
     public void card3()
     {
-        pawnMove.Move(0, 0);
+        pawnMove.Move(0, -1);
+    }
+
+    public void wallTemp()
+    {
+        Debug.Log("Button Works");
     }
 }

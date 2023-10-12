@@ -5,43 +5,31 @@ using UnityEngine.UI;
 
 public class cardSprite : MonoBehaviour
 {
-    /*This Script changes the image 
-     
-    CODE HAS BEEN TRANSFERED TO CARDPLAY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-    [SerializeField] private PawnMove pawnMove;
+    public Sprite[] _cardSprite;
+    public Image _cardImage;
     [SerializeField] private cardPlay cardPlay;
-    [SerializeField] private Image _cardSprite;
-    
 
-    public void cardImageUpdate()
+    private void Update() //will be where the card sprite gets updated (Full and semi-finished)
     {
-        Sprite plus1Forward = Resources.Load<Sprite>("+1Forward");
-
-        Debug.Log("ID " + _cardID);
-
-        if (_cardID == 0)
+        if (cardPlay._cardId == 0)
         {
-            //_cardSprite.sprite = null;
+            _cardImage.sprite = _cardSprite[0];
         }
-        else if (_cardID == 1)
+        else if (cardPlay._cardId == 1)
         {
-            //_cardSprite.sprite = plus1Forward;
-            gameObject.GetComponent<Image>().sprite = plus1Forward;
+            _cardImage.sprite = _cardSprite[1];
         }
-        else if (_cardID == 2)
+        else if (cardPlay._cardId == 2)
         {
-            
+            _cardImage.sprite = _cardSprite[2];
         }
 
-        else if (_cardID == 3)
+        else if (cardPlay._cardId == 3)
         {
-            
-
+            _cardImage.sprite = _cardSprite[3];
         }
-
-        _cardID = 0;
     }
-    */
+
+
 }
     
