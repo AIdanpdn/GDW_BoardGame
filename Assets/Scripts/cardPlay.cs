@@ -13,17 +13,9 @@ public class cardPlay : MonoBehaviour
     public int _cardId = 0;
     [SerializeField] private cardFunc cardFunc;
 
-
-    private void Start()
-    {
-     
-    }
-
-
-
     public void cardDraw() //Gets random number that corresponds to each card (Is seperate for each card slot already)
     {
-        _cardId = Random.Range(1, 5); //Change to 22
+        _cardId = Random.Range(1, 6); //Change to 22
         Debug.Log("Card Id " + _cardId);
         //cardSprite.cardImageUpdate();
 
@@ -61,6 +53,11 @@ public class cardPlay : MonoBehaviour
         }
 
         else if (_cardId == 4)
+        {
+            cardFunc.card4();
+        }
+
+        else if (_cardId == 5)
         {
             cardFunc.wallTemp();
         }

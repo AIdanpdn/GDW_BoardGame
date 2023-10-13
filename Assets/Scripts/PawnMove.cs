@@ -1,19 +1,21 @@
-using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class PawnMove : MonoBehaviour
 {
     public int MoveX = 0;
     public int MoveY = 0;
     public int _cardId;
-    private float currentX = 0;
-    private float currentY = 0;
+    public float currentX = 0;
+    public float currentY = 0;
     public int _turn = 0; //Turn identifier, 0 = blue 1 = red
+    public bool _wallCloneFlag;
 
+    [SerializeField] private GameObject wall;
     [SerializeField] private PawnMove pawnMove;
     [SerializeField] private cardPlay _cardPlayB1;
     [SerializeField] private cardPlay _cardPlayB2;
@@ -93,14 +95,20 @@ public class PawnMove : MonoBehaviour
         checkWin();
     }
 
-    public void wallFunc()
+    public void wallFunc(int X, int Y) //Takes cordinates and spawns a wall there, tags the new wall as Duped
     {
+        Debug.Log("wallFunc " + X + " " + Y);
+        GameObject _wallSpawned = Instantiate(wall);
+        _wallSpawned.transform.Rotate(0, -90, 0);
+        _wallSpawned.transform.Translate(X, Y, 0);
+        _wallSpawned.tag = "Duped";
 
+        _wallCloneFlag = true;
     }
 
-    private void checkWin()
+    private void checkWin() //checks for win conditions
     {
-        if (currentX == 7)
+        if (currentX >= 7)
         {
             Debug.Log("p1 wins");
             _winText.text = "Blue Wins!";
@@ -115,7 +123,7 @@ public class PawnMove : MonoBehaviour
 
         }
 
-        if (currentX == -7)
+        if (currentX <= -7)
         {
             Debug.Log("p2 wins");
             _winText.text = "Red Wins!";

@@ -9,7 +9,7 @@ public class cardSprite : MonoBehaviour
     public Image _cardImage;
     [SerializeField] private cardPlay cardPlay;
 
-    private void Update() //will be where the card sprite gets updated (Full and semi-finished)
+    private void Update() //will be where the card sprite gets updated (Could be better ngl)
     {
         if (cardPlay._cardId == 0)
         {
@@ -27,6 +27,16 @@ public class cardSprite : MonoBehaviour
         else if (cardPlay._cardId == 3)
         {
             _cardImage.sprite = _cardSprite[3];
+        }
+
+        else if (cardPlay._cardId == 4)
+        {
+            _cardImage.sprite = _cardSprite[4];
+        }
+
+        else if (cardPlay._cardId == 5)
+        {
+            _cardImage.sprite = _cardSprite[5];
         }
     }
 

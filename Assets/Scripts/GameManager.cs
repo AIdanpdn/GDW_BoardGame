@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     //These systems are in PawnMove!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     
-    //[SerializeField] private cardPlay _cardPlay;
+    /*[SerializeField] private cardPlay _cardPlay;
 
     // Start is called before the first frame update
     void Start()
@@ -30,4 +30,5 @@ public class GameManager : MonoBehaviour
         Debug.Log(_card1);
 
     }
+    */
 }
