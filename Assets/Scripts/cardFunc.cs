@@ -16,19 +16,25 @@ public class cardFunc : MonoBehaviour
         pawnMove.Move(0, 0);
         Debug.Log("cardFunc 0");
     }
-    public void card1()
+    public void card1() // 1 forward
     {
         pawnMove.Move(1, 0);
         Debug.Log("cardFunc 1");
     }    
-    public void card2()
+    public void card2() // 1 up
     {
         pawnMove.Move(0, 1);
         Debug.Log("cardFunc 2");
     }
-    public void card3()
+    public void card3() // 1 down
     {
-        pawnMove.Move(0, -1);
+        pawnMove.Move(0, -1); 
+        Debug.Log("cardFunc 3");
+    }
+    public void card4() // 2 forward
+    {
+        pawnMove.Move(2, 0);
+        Debug.Log("cardFunc 4");
     }
 
     public void wallTemp()
