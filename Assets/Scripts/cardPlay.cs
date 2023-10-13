@@ -15,7 +15,7 @@ public class cardPlay : MonoBehaviour
 
     public void cardDraw() //Gets random number that corresponds to each card (Is seperate for each card slot already)
     {
-        _cardId = Random.Range(1, 6); //Change to 22
+        _cardId = Random.Range(1, 8); //Change to 22
         Debug.Log("Card Id " + _cardId);
         //cardSprite.cardImageUpdate();
 
@@ -60,6 +60,16 @@ public class cardPlay : MonoBehaviour
         else if (_cardId == 5)
         {
             cardFunc.wallTemp();
+        }
+
+        else if (_cardId == 6)
+        {
+            cardFunc.card6();
+        }
+
+        else if (_cardId == 7)
+        {
+            cardFunc.card7();
         }
 
         _cardId = 0;

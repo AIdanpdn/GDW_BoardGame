@@ -38,6 +38,16 @@ public class cardSprite : MonoBehaviour
         {
             _cardImage.sprite = _cardSprite[5];
         }
+
+        else if (cardPlay._cardId == 6)
+        {
+            _cardImage.sprite = _cardSprite[6];
+        }
+
+        else if (cardPlay._cardId == 7)
+        {
+            _cardImage.sprite = _cardSprite[7];
+        }
     }
 
 

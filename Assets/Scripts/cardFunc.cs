@@ -42,6 +42,16 @@ public class cardFunc : MonoBehaviour
         pawnMove.Move(2, 0);
         Debug.Log("cardFunc 4");
     }
+    public void card6() // 2 up
+    {
+        pawnMove.Move(0, 2);
+        Debug.Log("cardFunc 6");
+    }
+    public void card7() // 2 down
+    {
+        pawnMove.Move(0, -2);
+        Debug.Log("cardFunc 7");
+    }
 
     public void wallTemp() //ALL WALL STUFF DO NOT MESS WITH, CARD 5 IS WALL
     {
