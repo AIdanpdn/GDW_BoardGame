@@ -12,6 +12,7 @@ public class cardPlay : MonoBehaviour
     private PawnMove pawnMove;
     public int _cardId = 0;
     [SerializeField] private cardFunc cardFunc;
+    public GameObject card;
 
     public void cardDraw() //Gets random number that corresponds to each card (Is seperate for each card slot already)
     {

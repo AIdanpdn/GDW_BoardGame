@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
+using TMPro;
 
 public class PawnMove : MonoBehaviour
 {
@@ -23,9 +24,17 @@ public class PawnMove : MonoBehaviour
     [SerializeField] private cardPlay _cardPlayR1;
     [SerializeField] private cardPlay _cardPlayR2;
     [SerializeField] private cardPlay _cardPlayR3;
-    [SerializeField] private Text _winText;
     public Button[] _cardButtons;
 
+    [SerializeField] private GameObject inputBox;
+    [SerializeField] public TMP_Text Heading;
+
+    [SerializeField] private GameObject Disabled1;
+    [SerializeField] private GameObject Disabled2;
+    [SerializeField] private GameObject Disabled3;
+    [SerializeField] private GameObject Disabled4;
+    [SerializeField] private GameObject Disabled5;
+    [SerializeField] private GameObject Disabled6;
 
     private void Start() //button in the middle does this click that instead 
     {
@@ -50,8 +59,11 @@ public class PawnMove : MonoBehaviour
 
     public void TurnSwitch()
     {
+        inputBox.SetActive(false);
+
         if (_turn == 0)
         {
+            Heading.text = "Player 2's Turn";
             _turn = 1;
             Debug.Log(_turn);
             _cardButtons[0].enabled = false;
@@ -60,10 +72,17 @@ public class PawnMove : MonoBehaviour
             _cardButtons[3].enabled = true;
             _cardButtons[4].enabled = true;
             _cardButtons[5].enabled = true;
+            Disabled1.SetActive(true);//DONT CHANGE: THESE DISABLED OBJS ARE TRUE=DISABLED (Opposite of what u would think)
+            Disabled2.SetActive(true);
+            Disabled3.SetActive(true);
+            Disabled4.SetActive(false);
+            Disabled5.SetActive(false);
+            Disabled6.SetActive(false);
         }
 
         else if (_turn == 1)
         {
+            Heading.text = "Player 1's Turn";
             _turn = 0;
             Debug.Log(_turn);
             _cardButtons[0].enabled = true;
@@ -72,6 +91,12 @@ public class PawnMove : MonoBehaviour
             _cardButtons[3].enabled = false;
             _cardButtons[4].enabled = false;
             _cardButtons[5].enabled = false;
+            Disabled1.SetActive(false);
+            Disabled2.SetActive(false);
+            Disabled3.SetActive(false);
+            Disabled4.SetActive(true);
+            Disabled5.SetActive(true);
+            Disabled6.SetActive(true);
             TurnStart();
         }
 
@@ -110,9 +135,10 @@ public class PawnMove : MonoBehaviour
     {
         if (currentX >= 7)
         {
+            transform.Translate(MoveX, 0, 0);
             Debug.Log("p1 wins");
-            _winText.text = "Blue Wins!";
-            _winText.color = Color.blue;
+            Heading.text = "Blue Wins!"; // Changed from normal text to TMPro Header (Using it for multipurpose)
+            Heading.color = Color.blue;
             _turn = 2;
             _cardButtons[0].enabled = false;
             _cardButtons[1].enabled = false;
@@ -126,8 +152,8 @@ public class PawnMove : MonoBehaviour
         if (currentX <= -7)
         {
             Debug.Log("p2 wins");
-            _winText.text = "Red Wins!";
-            _winText.color = Color.red;
+            Heading.text = "Red Wins!"; // Changed from normal text to TMPro Header (Using it for multipurpose)
+            Heading.color = Color.red;
             _turn = 2;
             _cardButtons[0].enabled = false;
             _cardButtons[1].enabled = false;
