@@ -3,18 +3,36 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class cardFunc : MonoBehaviour
 {
     /* this is the script that cardPlay calls to have all the card Functions*/
+    [SerializeField] private GameObject inputBox;
+    [SerializeField] public TMP_Text Text;
+    [SerializeField] public TMP_Text Heading;
     [SerializeField] private InputField InputFieldX;
     [SerializeField] private InputField InputFieldY;
+    private int IntX;
+    private int IntY;
     private int InputValueX;
     private int InputValueY;
     private int lookForKey = 0;
 
+    [SerializeField] private cardPlay cardPlay1;
+    [SerializeField] private cardPlay cardPlay2;
+    [SerializeField] private cardPlay cardPlay3;
+    [SerializeField] private cardPlay cardPlay4;
+    [SerializeField] private cardPlay cardPlay5;
+    [SerializeField] private cardPlay cardPlay6;
 
     [SerializeField] private PawnMove pawnMove;
+    
+
+    public void Start() //Hides the input box at the start (in case it isnt alr disabled)
+    {
+        inputBox.SetActive(false);
+    }
 
     //Card functions so far only moves the pawn towards red side (reds cards will simply multiply these values by -1)
     public void card0()
@@ -57,6 +75,8 @@ public class cardFunc : MonoBehaviour
     {
         InputFieldX.enabled = true;
         InputFieldY.enabled = true;
+        inputBox.SetActive(true); // INPUT BOX AS A WHOLE
+        Heading.enabled = false;
         lookForKey = 1;
         
     }
@@ -64,15 +84,46 @@ public class cardFunc : MonoBehaviour
     {
         if (lookForKey == 1)
         {
-            if (Input.GetKey(KeyCode.Return)) 
+            if (Input.GetKey(KeyCode.Return))
             {
-                InputValueX = int.Parse(InputFieldX.text) - 8;
+                IntX = int.Parse(InputFieldX.text);
+                IntY = int.Parse(InputFieldY.text);
+                InputValueX = int.Parse(InputFieldX.text) - 7;
                 InputValueY = int.Parse(InputFieldY.text) - 3;
-                pawnMove.wallFunc(InputValueX, InputValueY);
+                if (IntX < 1 || IntX > 13 || IntY < 1 || IntY > 5) // Check for bad input and write error msg
+                {
+                    Debug.Log("ERROR!");
+                    Text.text = "Error! Try again!\nPress [Enter] to place wall";
+                }
+                else
+                {
+                    pawnMove.wallFunc(InputValueX, InputValueY);
+                    lookForKey = 0;
+                    InputFieldX.text = ("");
+                    InputFieldY.text = ("");
+                    Text.text = "Press [Enter] to place wall\nPress [Esc] to cancel"; // Reset text
+                    inputBox.SetActive(false);
+                    Heading.enabled = true;
+                    lookForKey = 0;
+                    cardPlay1.DeleteSavedCard();
+                    cardPlay2.DeleteSavedCard();
+                    cardPlay3.DeleteSavedCard();
+                    cardPlay4.DeleteSavedCard();
+                    cardPlay5.DeleteSavedCard();
+                    cardPlay6.DeleteSavedCard();
+                }
+            }
+            else if (Input.GetKey(KeyCode.Escape))
+            {
+                inputBox.SetActive(false);
+                Heading.enabled = true;
                 lookForKey = 0;
-                InputFieldX.text = ("");
-                InputFieldY.text = ("");
-
+                cardPlay1.CancelCard();
+                cardPlay2.CancelCard();
+                cardPlay3.CancelCard();
+                cardPlay4.CancelCard();
+                cardPlay5.CancelCard();
+                cardPlay6.CancelCard();
             }
         }
         
