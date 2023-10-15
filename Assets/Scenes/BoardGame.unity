@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_PressedColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -540,8 +540,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardId: 0
+  connectedCard: {fileID: 128327244}
   cardFunc: {fileID: 2047801432}
-  card: {fileID: 0}
+  cardSprite: {fileID: 128327251}
+  PawnMove: {fileID: 1993762015}
+  disabledObj: {fileID: 1098201132}
 --- !u!114 &128327251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -564,6 +567,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8350d734392bc2e4d9d39eabb9e1c381, type: 3}
   - {fileID: 21300000, guid: 56348eb01c79ed54b9a811721ed6b878, type: 3}
   _cardImage: {fileID: 128327248}
+  _cardButton: {fileID: 0}
   cardPlay: {fileID: 128327250}
 --- !u!1 &129198341
 GameObject:
@@ -914,10 +918,10 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1002,8 +1006,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardId: 0
+  connectedCard: {fileID: 303821596}
   cardFunc: {fileID: 2047801432}
-  card: {fileID: 0}
+  cardSprite: {fileID: 303821603}
+  PawnMove: {fileID: 1993762015}
+  disabledObj: {fileID: 1396236721}
 --- !u!114 &303821603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1026,6 +1033,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8350d734392bc2e4d9d39eabb9e1c381, type: 3}
   - {fileID: 21300000, guid: 56348eb01c79ed54b9a811721ed6b878, type: 3}
   _cardImage: {fileID: 303821600}
+  _cardButton: {fileID: 303821599}
   cardPlay: {fileID: 303821602}
 --- !u!1 &313103852
 GameObject:
@@ -1627,7 +1635,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press [Enter] to place wall
+  m_text: 'Press [Enter] to place wall
+
+    Press [Esc] to cancel'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1765,12 +1775,12 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.3529412}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_PressedColor: {r: 0.8117647, g: 0.8117647, b: 0.8117647, a: 1}
-    m_SelectedColor: {r: 1, g: 1, b: 1, a: 0.3529412}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1853,8 +1863,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardId: 0
+  connectedCard: {fileID: 616620673}
   cardFunc: {fileID: 2047801432}
-  card: {fileID: 0}
+  cardSprite: {fileID: 616620680}
+  PawnMove: {fileID: 1993762015}
+  disabledObj: {fileID: 1405896339}
 --- !u!114 &616620680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1877,6 +1890,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8350d734392bc2e4d9d39eabb9e1c381, type: 3}
   - {fileID: 21300000, guid: 56348eb01c79ed54b9a811721ed6b878, type: 3}
   _cardImage: {fileID: 616620677}
+  _cardButton: {fileID: 0}
   cardPlay: {fileID: 616620679}
 --- !u!1 &730607580
 GameObject:
@@ -1905,7 +1919,7 @@ RectTransform:
   m_GameObject: {fileID: 730607580}
   m_LocalRotation: {x: -0, y: -0, z: -0.7075662, w: 0.70664704}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7499, y: 2.3751, z: 1}
+  m_LocalScale: {x: 0.862884, y: 1.1711731, z: 14.33}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 756923234}
@@ -1916,7 +1930,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.074}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.6, y: -1}
+  m_AnchoredPosition: {x: -0.5, y: 129.2}
   m_SizeDelta: {x: 70.5817, y: 107.837}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &730607582
@@ -2191,8 +2205,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputBox: {fileID: 730607580}
   Text: {fileID: 0}
+  Heading: {fileID: 0}
   InputFieldX: {fileID: 1343505002}
   InputFieldY: {fileID: 1858477506}
+  cardPlay1: {fileID: 0}
+  cardPlay2: {fileID: 0}
+  cardPlay3: {fileID: 0}
+  cardPlay4: {fileID: 0}
+  cardPlay5: {fileID: 0}
+  cardPlay6: {fileID: 0}
   pawnMove: {fileID: 1993762015}
 --- !u!114 &778500254
 MonoBehaviour:
@@ -2396,8 +2417,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardId: 0
+  connectedCard: {fileID: 878131397}
   cardFunc: {fileID: 2047801432}
-  card: {fileID: 0}
+  cardSprite: {fileID: 878131403}
+  PawnMove: {fileID: 1993762015}
+  disabledObj: {fileID: 1931070885}
 --- !u!114 &878131400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2421,7 +2445,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_PressedColor: {r: 0.8117647, g: 0.8117647, b: 0.8117647, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -2514,6 +2538,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8350d734392bc2e4d9d39eabb9e1c381, type: 3}
   - {fileID: 21300000, guid: 56348eb01c79ed54b9a811721ed6b878, type: 3}
   _cardImage: {fileID: 878131401}
+  _cardButton: {fileID: 0}
   cardPlay: {fileID: 878131399}
 --- !u!1 &991835666
 GameObject:
@@ -2527,7 +2552,6 @@ GameObject:
   - component: {fileID: 991835669}
   - component: {fileID: 991835668}
   - component: {fileID: 991835667}
-  - component: {fileID: 991835671}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2626,19 +2650,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &991835671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 991835666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54268da24c325154ebfe86646a7b9d36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Text: {fileID: 0}
 --- !u!1 &1016766667
 GameObject:
   m_ObjectHideFlags: 0
@@ -3271,7 +3282,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_PressedColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -3355,8 +3366,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardId: 0
+  connectedCard: {fileID: 1380166616}
   cardFunc: {fileID: 2047801432}
-  card: {fileID: 0}
+  cardSprite: {fileID: 1380166623}
+  PawnMove: {fileID: 1993762015}
+  disabledObj: {fileID: 424625715}
 --- !u!114 &1380166623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3379,6 +3393,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8350d734392bc2e4d9d39eabb9e1c381, type: 3}
   - {fileID: 21300000, guid: 56348eb01c79ed54b9a811721ed6b878, type: 3}
   _cardImage: {fileID: 1380166620}
+  _cardButton: {fileID: 0}
   cardPlay: {fileID: 1380166622}
 --- !u!1 &1396236721
 GameObject:
@@ -3595,7 +3610,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_PressedColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -3679,8 +3694,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardId: 0
+  connectedCard: {fileID: 1554877400}
   cardFunc: {fileID: 2047801432}
-  card: {fileID: 0}
+  cardSprite: {fileID: 1554877407}
+  PawnMove: {fileID: 1993762015}
+  disabledObj: {fileID: 233703874}
 --- !u!114 &1554877407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3703,6 +3721,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8350d734392bc2e4d9d39eabb9e1c381, type: 3}
   - {fileID: 21300000, guid: 56348eb01c79ed54b9a811721ed6b878, type: 3}
   _cardImage: {fileID: 1554877404}
+  _cardButton: {fileID: 0}
   cardPlay: {fileID: 1554877406}
 --- !u!1 &1705024862
 GameObject:
@@ -4487,8 +4506,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputBox: {fileID: 730607580}
   Text: {fileID: 530981573}
+  Heading: {fileID: 801431361}
   InputFieldX: {fileID: 1343505002}
   InputFieldY: {fileID: 1858477506}
+  cardPlay1: {fileID: 303821602}
+  cardPlay2: {fileID: 878131399}
+  cardPlay3: {fileID: 616620679}
+  cardPlay4: {fileID: 1380166622}
+  cardPlay5: {fileID: 1554877406}
+  cardPlay6: {fileID: 128327250}
   pawnMove: {fileID: 1993762015}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

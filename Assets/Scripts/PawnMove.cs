@@ -60,6 +60,7 @@ public class PawnMove : MonoBehaviour
     public void TurnSwitch()
     {
         inputBox.SetActive(false);
+        Heading.enabled = true;
 
         if (_turn == 0)
         {
@@ -182,6 +183,62 @@ public class PawnMove : MonoBehaviour
         if (currentY == -4)
         {
             transform.Translate(0, 2, 0);
+        }
+    }
+
+    public void disableCard(object disable)
+    {
+        if (disable == Disabled1)
+        {
+            Disabled1.SetActive(true);
+        }
+        else if (disable == Disabled2)
+        {
+            Disabled2.SetActive(true);
+        }
+        else if (disable == Disabled3)
+        {
+            Disabled3.SetActive(true);
+        }
+        else if (disable == Disabled4)
+        {
+            Disabled4.SetActive(true);
+        }
+        else if (disable == Disabled5)
+        {
+            Disabled5.SetActive(true);
+        }
+        else if (disable == Disabled6)
+        {
+            Disabled6.SetActive(true);
+        }
+    }
+
+    public void unDisableCard(object disable)
+    {
+        if (disable == Disabled1)
+        {
+            Disabled1.SetActive(false);
+        }
+        else if (disable == Disabled2)
+        {
+            Disabled2.SetActive(false);
+        }
+        else if (disable == Disabled3)
+        {
+            Disabled3.SetActive(false);
+        }
+        else if (disable == Disabled4)
+        {
+            Disabled4.SetActive(false);
+        }
+        else if (disable == Disabled5)
+        {
+            Disabled5.SetActive(false);
+        }
+        else if (disable == Disabled6)
+        {
+            Disabled6.SetActive(false);
         }
     }
 }

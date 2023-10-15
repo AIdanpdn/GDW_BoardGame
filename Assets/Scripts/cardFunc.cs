@@ -10,6 +10,7 @@ public class cardFunc : MonoBehaviour
     /* this is the script that cardPlay calls to have all the card Functions*/
     [SerializeField] private GameObject inputBox;
     [SerializeField] public TMP_Text Text;
+    [SerializeField] public TMP_Text Heading;
     [SerializeField] private InputField InputFieldX;
     [SerializeField] private InputField InputFieldY;
     private int IntX;
@@ -18,6 +19,12 @@ public class cardFunc : MonoBehaviour
     private int InputValueY;
     private int lookForKey = 0;
 
+    [SerializeField] private cardPlay cardPlay1;
+    [SerializeField] private cardPlay cardPlay2;
+    [SerializeField] private cardPlay cardPlay3;
+    [SerializeField] private cardPlay cardPlay4;
+    [SerializeField] private cardPlay cardPlay5;
+    [SerializeField] private cardPlay cardPlay6;
 
     [SerializeField] private PawnMove pawnMove;
     
@@ -69,6 +76,7 @@ public class cardFunc : MonoBehaviour
         InputFieldX.enabled = true;
         InputFieldY.enabled = true;
         inputBox.SetActive(true); // INPUT BOX AS A WHOLE
+        Heading.enabled = false;
         lookForKey = 1;
         
     }
@@ -76,7 +84,7 @@ public class cardFunc : MonoBehaviour
     {
         if (lookForKey == 1)
         {
-            if (Input.GetKey(KeyCode.Return)) 
+            if (Input.GetKey(KeyCode.Return))
             {
                 IntX = int.Parse(InputFieldX.text);
                 IntY = int.Parse(InputFieldY.text);
@@ -93,9 +101,23 @@ public class cardFunc : MonoBehaviour
                     lookForKey = 0;
                     InputFieldX.text = ("");
                     InputFieldY.text = ("");
-                    Text.text = "Press [Enter] to place wall"; // Reset text
+                    Text.text = "Press [Enter] to place wall\nPress [Esc] to cancel"; // Reset text
                     inputBox.SetActive(false);
+                    Heading.enabled = true;
+                    lookForKey = 0;
                 }
+            }
+            else if (Input.GetKey(KeyCode.Escape))
+            {
+                inputBox.SetActive(false);
+                Heading.enabled = true;
+                lookForKey = 0;
+                cardPlay1.CancelCard();
+                cardPlay2.CancelCard();
+                cardPlay3.CancelCard();
+                cardPlay4.CancelCard();
+                cardPlay5.CancelCard();
+                cardPlay6.CancelCard();
             }
         }
         
