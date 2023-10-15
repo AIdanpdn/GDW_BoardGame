@@ -105,6 +105,12 @@ public class cardFunc : MonoBehaviour
                     inputBox.SetActive(false);
                     Heading.enabled = true;
                     lookForKey = 0;
+                    cardPlay1.DeleteSavedCard();
+                    cardPlay2.DeleteSavedCard();
+                    cardPlay3.DeleteSavedCard();
+                    cardPlay4.DeleteSavedCard();
+                    cardPlay5.DeleteSavedCard();
+                    cardPlay6.DeleteSavedCard();
                 }
             }
             else if (Input.GetKey(KeyCode.Escape))

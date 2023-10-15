@@ -186,7 +186,7 @@ public class PawnMove : MonoBehaviour
         }
     }
 
-    public void disableCard(object disable)
+    public void disableCard(GameObject disable)
     {
         if (disable == Disabled1)
         {
@@ -214,7 +214,7 @@ public class PawnMove : MonoBehaviour
         }
     }
 
-    public void unDisableCard(object disable)
+    public void unDisableCard(GameObject disable)
     {
         if (disable == Disabled1)
         {

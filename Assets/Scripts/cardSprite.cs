@@ -59,6 +59,7 @@ public class cardSprite : MonoBehaviour
             _cardImage.sprite = _cardSprite[7];
             
         }
+
     }
 
 

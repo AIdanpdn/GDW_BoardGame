@@ -95,4 +95,9 @@ public class cardPlay : MonoBehaviour
             PawnMove.unDisableCard(disabledObj);
         }
     }
+
+    public void DeleteSavedCard()
+    {
+        currentWallCard = null;
+    }
 }
